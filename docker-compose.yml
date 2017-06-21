@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  lde.web:
+    image: lde.web
+    build:
+      context: ./LDE.Web
+      dockerfile: Dockerfile
