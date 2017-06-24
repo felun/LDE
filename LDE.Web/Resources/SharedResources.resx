@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Main_LearnMore" xml:space="preserve">
+    <value>Learn more</value>
+  </data>
   <data name="Menu_About" xml:space="preserve">
     <value>About</value>
   </data>
@@ -127,7 +130,7 @@
     <value>Main</value>
   </data>
   <data name="Menu_Price" xml:space="preserve">
-    <value>Srvices/Price</value>
+    <value>Services/Price</value>
   </data>
   <data name="Menu_Request" xml:space="preserve">
     <value>Request</value>

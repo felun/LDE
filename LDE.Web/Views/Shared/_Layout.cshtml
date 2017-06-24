@@ -6,33 +6,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - LDE.Web</title>
+    <title>LEGAL DATA EXPERT</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext">
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext">
     </environment>
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
     <div class="container">
 
-@*<form id="selectLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path" method="post" class="form-inline" role="form">
-    <div class="form-group">
-        <label for="culture" class="control-label">@SharedLocalizer["Language"]</label>
-        <select id="culture" name="culture" asp-items="cultureItems" class="form-control"></select>
-    </div>
-    <button type="submit" class="btn btn-default">@SharedLocalizer["Change Language"]</button>
-</form>*@
-        <div>
-            <a href="@Url.Action("SetLanguage", "Home", new {culture= "en-US" })">En</a>
-            <a href="@Url.Action("SetLanguage", "Home", new {culture= "ru-RU" })">Rus</a>
+        <div class="app-language-switcher">
+            <a href="@Url.Action("SetLanguage", "Home", new {culture= "ru-RU", returnUrl = Context.Request.Path })" class="app-selectedItem">@Localizer["Rus"]</a>
+            <a href="@Url.Action("SetLanguage", "Home", new {culture= "en-US", returnUrl = Context.Request.Path })">@Localizer["Eng"]</a>
         </div>
         <div class="app-logo"></div>
         <nav class="navbar ">
@@ -46,9 +41,9 @@
                     </button>
                     @*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">LDE.Web</a>*@
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse app-mainmenu">
                     <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Main"]</a></li>
+                        <li class="app-selectedItem"><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Main"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="About">@Localizer["Menu_About"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Contacts"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Price"]</a></li>
@@ -57,32 +52,20 @@
                 </div>
             </div>
         </nav>
-    @*<nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">LDE.Web</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>*@
+
         <div class="container body-content">
             @RenderBody()
-            <hr />
-            @*<footer>
-                    <p>&copy; 2017 - LDE.Web</p>
-                </footer>*@
+
+            @*<hr />*@
+            <footer>
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="pull-right"><p>Legal Data Expert &copy; 2017</p></div>
+                        @*<div class="pull-left"><p>@Localizer["Footer_Registration"] Регистрация</p></div>*@
+                    </div>
+                </div>
+                
+            </footer>
         </div>
     </div>
     <environment names="Development">

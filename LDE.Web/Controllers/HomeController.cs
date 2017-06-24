@@ -7,6 +7,7 @@ using LDE.Web.Resources;
 using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
+using LDE.Web.ViewModels;
 
 namespace LDE.Web.Controllers
 {
@@ -23,7 +24,7 @@ namespace LDE.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new MainPageViewModel(Request));
         }
 
         public IActionResult About()
@@ -46,7 +47,7 @@ namespace LDE.Web.Controllers
         }
 
         //[HttpPost]
-        public IActionResult SetLanguage(string culture/*, string returnUrl*/)
+        public IActionResult SetLanguage(string culture, string returnUrl)
         {
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
@@ -54,7 +55,7 @@ namespace LDE.Web.Controllers
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
 
-            return new EmptyResult();// LocalRedirect(returnUrl);
+            return LocalRedirect(returnUrl);
         }
 
     }

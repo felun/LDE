@@ -62,11 +62,56 @@ namespace LDE.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Learn more.
+        /// </summary>
+        internal static string Main_LearnMore {
+            get {
+                return ResourceManager.GetString("Main_LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string Menu_About {
+            get {
+                return ResourceManager.GetString("Menu_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contacts.
+        /// </summary>
+        internal static string Menu_Contacts {
+            get {
+                return ResourceManager.GetString("Menu_Contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Main.
         /// </summary>
         internal static string Menu_Main {
             get {
-                return ResourceManager.GetString("Home", resourceCulture);
+                return ResourceManager.GetString("Menu_Main", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Services/Price.
+        /// </summary>
+        internal static string Menu_Price {
+            get {
+                return ResourceManager.GetString("Menu_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request.
+        /// </summary>
+        internal static string Menu_Request {
+            get {
+                return ResourceManager.GetString("Menu_Request", resourceCulture);
             }
         }
     }
