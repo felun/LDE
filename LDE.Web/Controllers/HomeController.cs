@@ -8,22 +8,24 @@ using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
 using LDE.Web.ViewModels;
+using AspNetCore.Identity.MongoDB;
+using Microsoft.AspNetCore.Identity;
 
 namespace LDE.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
 
-        private IStringLocalizer<SharedResources> _sharedLocalizer;
-
-
-        public HomeController(IStringLocalizer<SharedResources> sharedLocalizer)
+        public HomeController(
+            UserManager<MongoIdentityUser> userManager,
+            SignInManager<MongoIdentityUser> signInManager,
+            IStringLocalizer<SharedResources> sharedLocalizer):base(userManager, sharedLocalizer)
         {
-            _sharedLocalizer = sharedLocalizer;
         }
 
         public IActionResult Index()
         {
+            var user = GetCurrentUserAsync();
             return View(new MainPageViewModel(Request));
         }
 
