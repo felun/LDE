@@ -28,8 +28,8 @@ namespace LDE.Web.Controllers
             //ILoggerFactory loggerFactory
             )
         {
-            //_userManager = userManager;
-            //_sharedLocalizer = sharedLocalizer;
+            _userManager = userManager;
+            _sharedLocalizer = sharedLocalizer;
 
             //_emailSender = emailSender;
             //_smsSender = smsSender;
