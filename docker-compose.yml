@@ -3,17 +3,21 @@ version: '2'
 services:
   lde.web:
     image: lde.web
-    build:
-      context: ./
-    dockerfile: Dockerfile
+    volumes:
+      - /bin/nano:/bin/nano
+    ports:
+      - 80:80
+    #build:
+    #  context: ./
+    #dockerfile: Dockerfile
     depends_on: 
-     - "mongoDB"
-   restart: always
+     - "mongodb"
+    restart: always
   
-  mongoDB:
+  mongodb:
     image: mongo
     volumes:
       - /var/mongo:/data/db
-     ports:
-      - 27017:27017
-     restart: always
+    #ports:
+    #  - 27017:27017
+    restart: always

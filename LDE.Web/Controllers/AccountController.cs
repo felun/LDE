@@ -22,7 +22,7 @@ namespace LDE.Web.Controllers
         //private readonly ISmsSender _smsSender;
         //private readonly ILogger _logger;
 
-        private IStringLocalizer<SharedResources> _sharedLocalizer;
+        //private IStringLocalizer<SharedResources> _sharedLocalizer;
         public AccountController(
             UserManager<MongoIdentityUser> userManager,
             SignInManager<MongoIdentityUser> signInManager,
