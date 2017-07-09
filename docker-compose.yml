@@ -4,5 +4,16 @@ services:
   lde.web:
     image: lde.web
     build:
-      context: ./LDE.Web
-      dockerfile: Dockerfile
+      context: ./
+    dockerfile: Dockerfile
+    depends_on: 
+     - "mongoDB"
+   restart: always
+  
+  mongoDB:
+    image: mongo
+    volumes:
+      - /var/mongo:/data/db
+     ports:
+      - 27017:27017
+     restart: always
