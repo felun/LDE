@@ -20,25 +20,27 @@ namespace LDE.Web.Controllers
         protected IStringLocalizer<SharedResources> _sharedLocalizer;
 
         public BaseController(
-            UserManager<MongoIdentityUser> userManager,
-            IStringLocalizer<SharedResources> sharedLocalizer
+            //UserManager<MongoIdentityUser> userManager,
+            //IStringLocalizer<SharedResources> sharedLocalizer
+
             //IEmailSender emailSender,
             //ISmsSender smsSender,
             //ILoggerFactory loggerFactory
             )
         {
-            _userManager = userManager;
-            _sharedLocalizer = sharedLocalizer;
+            //_userManager = userManager;
+            //_sharedLocalizer = sharedLocalizer;
+
             //_emailSender = emailSender;
             //_smsSender = smsSender;
             //_logger = loggerFactory.CreateLogger<AccountController>();
         }
 
       
-        protected Task<MongoIdentityUser> GetCurrentUserAsync()
-        {
-            return _userManager.GetUserAsync(HttpContext.User);
-        }
+        //protected Task<MongoIdentityUser> GetCurrentUserAsync()
+        //{
+        //    return _userManager.GetUserAsync(HttpContext.User);
+        //}
 
         protected IActionResult RedirectToLocal(string returnUrl)
         {

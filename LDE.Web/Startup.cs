@@ -50,14 +50,15 @@ namespace LDE.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDb"));
-            services.AddSingleton<IUserStore<MongoIdentityUser>>(provider =>
-            {
-                var options = provider.GetService<IOptions<MongoDbSettings>>();
-                var client = new MongoClient(options.Value.ConnectionString);
-                var database = client.GetDatabase(options.Value.DatabaseName);
+            //services.AddSingleton<IUserStore<MongoIdentityUser>>(provider =>
+            //{
+            //    var options = provider.GetService<IOptions<MongoDbSettings>>();
+            //    var client = new MongoClient(options.Value.ConnectionString);
+            //    var database = client.GetDatabase(options.Value.DatabaseName);
 
-                return new MongoUserStore<MongoIdentityUser>(database);
-            });
+            //    return new MongoUserStore<MongoIdentityUser>(database);
+
+            //});
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -80,16 +81,16 @@ namespace LDE.Web
             services.AddOptions();
             services.AddDataProtection();
 
-            services.TryAddSingleton<IdentityMarkerService>();
-            services.TryAddSingleton<IUserValidator<MongoIdentityUser>, UserValidator<MongoIdentityUser>>();
-            services.TryAddSingleton<IPasswordValidator<MongoIdentityUser>, PasswordValidator<MongoIdentityUser>>();
-            services.TryAddSingleton<IPasswordHasher<MongoIdentityUser>, PasswordHasher<MongoIdentityUser>>();
-            services.TryAddSingleton<ILookupNormalizer, UpperInvariantLookupNormalizer>();
-            services.TryAddSingleton<IdentityErrorDescriber>();
-            services.TryAddSingleton<ISecurityStampValidator, SecurityStampValidator<MongoIdentityUser>>();
-            services.TryAddSingleton<IUserClaimsPrincipalFactory<MongoIdentityUser>, UserClaimsPrincipalFactory<MongoIdentityUser>>();
-            services.TryAddSingleton<UserManager<MongoIdentityUser>, UserManager<MongoIdentityUser>>();
-            services.TryAddScoped<SignInManager<MongoIdentityUser>, SignInManager<MongoIdentityUser>>();
+            //services.TryAddSingleton<IdentityMarkerService>();
+            //services.TryAddSingleton<IUserValidator<MongoIdentityUser>, UserValidator<MongoIdentityUser>>();
+            //services.TryAddSingleton<IPasswordValidator<MongoIdentityUser>, PasswordValidator<MongoIdentityUser>>();
+            //services.TryAddSingleton<IPasswordHasher<MongoIdentityUser>, PasswordHasher<MongoIdentityUser>>();
+            //services.TryAddSingleton<ILookupNormalizer, UpperInvariantLookupNormalizer>();
+            //services.TryAddSingleton<IdentityErrorDescriber>();
+            //services.TryAddSingleton<ISecurityStampValidator, SecurityStampValidator<MongoIdentityUser>>();
+            //services.TryAddSingleton<IUserClaimsPrincipalFactory<MongoIdentityUser>, UserClaimsPrincipalFactory<MongoIdentityUser>>();
+            //services.TryAddSingleton<UserManager<MongoIdentityUser>, UserManager<MongoIdentityUser>>();
+            //services.TryAddScoped<SignInManager<MongoIdentityUser>, SignInManager<MongoIdentityUser>>();
 
             AddDefaultTokenProviders(services);
 
