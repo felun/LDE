@@ -17,15 +17,15 @@ namespace LDE.Web.Controllers
     {
 
         public HomeController(
-            //UserManager<MongoIdentityUser> userManager,
-            //SignInManager<MongoIdentityUser> signInManager,
-            IStringLocalizer<SharedResources> sharedLocalizer):base(/*userManager, sharedLocalizer*/)
+            UserManager<MongoIdentityUser> userManager,
+            SignInManager<MongoIdentityUser> signInManager,
+            IStringLocalizer<SharedResources> sharedLocalizer):base(userManager, sharedLocalizer)
         {
         }
 
         public IActionResult Index()
         {
-            //var user = GetCurrentUserAsync();
+            var user = GetCurrentUserAsync();
             return View(new MainPageViewModel(Request));
         }
 

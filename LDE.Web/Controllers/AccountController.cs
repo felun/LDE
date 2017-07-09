@@ -30,7 +30,7 @@ namespace LDE.Web.Controllers
             //IEmailSender emailSender,
             //ISmsSender smsSender,
             //ILoggerFactory loggerFactory
-            ):base(/*userManager,sharedLocalizer*/)
+            ):base(userManager,sharedLocalizer)
         {
             _signInManager = signInManager;
             //_emailSender = emailSender;

@@ -12,7 +12,7 @@ namespace LDE.Web.Controllers
     {
 
         protected readonly UserManager<MongoIdentityUser> _userManager;
-        //private readonly SignInManager<MongoIdentityUser> _signInManager;
+        private readonly SignInManager<MongoIdentityUser> _signInManager;
         //private readonly IEmailSender _emailSender;
         //private readonly ISmsSender _smsSender;
         //private readonly ILogger _logger;
@@ -20,8 +20,8 @@ namespace LDE.Web.Controllers
         protected IStringLocalizer<SharedResources> _sharedLocalizer;
 
         public BaseController(
-            //UserManager<MongoIdentityUser> userManager,
-            //IStringLocalizer<SharedResources> sharedLocalizer
+            UserManager<MongoIdentityUser> userManager,
+            IStringLocalizer<SharedResources> sharedLocalizer
 
             //IEmailSender emailSender,
             //ISmsSender smsSender,
@@ -36,11 +36,11 @@ namespace LDE.Web.Controllers
             //_logger = loggerFactory.CreateLogger<AccountController>();
         }
 
-      
-        //protected Task<MongoIdentityUser> GetCurrentUserAsync()
-        //{
-        //    return _userManager.GetUserAsync(HttpContext.User);
-        //}
+
+        protected Task<MongoIdentityUser> GetCurrentUserAsync()
+        {
+            return _userManager.GetUserAsync(HttpContext.User);
+        }
 
         protected IActionResult RedirectToLocal(string returnUrl)
         {
