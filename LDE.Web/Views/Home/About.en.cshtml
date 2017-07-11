@@ -1,0 +1,49 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
+@{
+//ViewData["Title"] = "About";
+}
+@*<h2>@ViewData["Title"].</h2>
+    <h3>@ViewData["Message"]</h3>
+
+    <p>Use this area to provide additional information.</p>*@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <ol class="breadcrumb">
+                <li><a href="#">@Localizer["Menu_Main"]</a></li>
+                <li class="active">@Localizer["Menu_About"]</li>
+            </ol>
+            <div class="text-item">
+                <h1>LegalDataExpert</h1>
+                <p>Компания LegalDataExpert предоставляет официальную и достоверную информацию из гос. реестров стран Европы, Америки, Азии, Океании и Африки как на электронных и бумажных носителях, так и в апостилированной,легализованной или завернной форме.</p>
+            </div>
+            <div class="text-item">
+                <h2>Наша Команда</h2>
+                <p>Оперативная деятельность компании LegalDataExpert осуществляется командой опытных юристов и аудиторов, лицензированных в странах из гос.реестров, которых предоставляется необходимая информация.</p>
+            </div>
+            <div class="text-item">
+                <h2>Наши Преимущества</h2>
+                <ul class="serv-menu">
+                    <li>короткие сроки и возможность экспресс-заявки;</li>
+                    <li>возможность апостилирования и легализации документов;</li>
+                    <li>возможность перевода документов на русский и другие языки;</li>
+                    <li>анонимность в отношении субъекта по которому предоставляется информация;</li>
+                    <li>ответственный и бизнес-ориентированный подход к обработке заявок;</li>
+                    <li>отсутствие затрат с вашей стороны, в случае невозможности получения необходимой информации;</li>
+                    <li>автоматический инвойс / договор-офферта;</li>
+                    <li>круглосуточная обработка заявок;</li>
+                    <li>и многие другие.</li>
+                </ul>
+            </div>
+            <div class="text-item">
+                <h2>Контакты</h2>
+                <p>Специалисты LegalDatExpert готовы ответить на ваши вопросы</p>
+                <p>по телефонам: +7 (495) ХХХ ХХХ</p>
+                <p>+7 (495) ХХХ ХХХ</p>
+                <p>Электронной почте: info@legaldataexpert.com</p>
+            </div>
+        </div>
+    </div>
+</div>

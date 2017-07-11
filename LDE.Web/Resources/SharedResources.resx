@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Footer_AccountsInForeignBanks" xml:space="preserve">
+    <value>Opening of accounts in foreign banks</value>
+  </data>
+  <data name="Footer_Registartion" xml:space="preserve">
+    <value>Registration and support of legal entities abroad</value>
+  </data>
+  <data name="Footer_Sales" xml:space="preserve">
+    <value>Sale of ready-made foreign companies</value>
+  </data>
+  <data name="Footer_TaxAndCorporatePlanning" xml:space="preserve">
+    <value>Tax and corporate planning</value>
+  </data>
   <data name="Main_LearnMore" xml:space="preserve">
     <value>Learn more</value>
   </data>
@@ -134,5 +149,23 @@
   </data>
   <data name="Menu_Request" xml:space="preserve">
     <value>Request</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="RequestModal_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RequestModal_Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="RequestModal_Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="RequestModal_SubmitRequest" xml:space="preserve">
+    <value>Submit your request</value>
+  </data>
+  <data name="Since" xml:space="preserve">
+    <value>since</value>
   </data>
 </root>

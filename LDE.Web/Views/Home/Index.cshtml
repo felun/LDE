@@ -5,14 +5,18 @@
 @inject IStringLocalizer<SharedResources> Localizer
 @model MainPageViewModel
 <div class="container">
-    @Html.Partial("_Apostillization."+ Model.Culture.TwoLetterISOLanguageName)
-    
-    @Html.Partial("_ExtractsCommercial." + Model.Culture.TwoLetterISOLanguageName)
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            @Html.Partial("_Apostillization." + Model.Culture.TwoLetterISOLanguageName)
 
-    @Html.Partial("_ExtractsProperty." + Model.Culture.TwoLetterISOLanguageName)
+            @Html.Partial("_ExtractsCommercial." + Model.Culture.TwoLetterISOLanguageName)
 
-    @Html.Partial("_ExtractsOther." + Model.Culture.TwoLetterISOLanguageName)
+            @Html.Partial("_ExtractsProperty." + Model.Culture.TwoLetterISOLanguageName)
 
-    @Html.Partial("_ProfessionalTranslations." + Model.Culture.TwoLetterISOLanguageName)
+            @Html.Partial("_ExtractsOther." + Model.Culture.TwoLetterISOLanguageName)
 
+            @Html.Partial("_ProfessionalTranslations." + Model.Culture.TwoLetterISOLanguageName)
+
+        </div>
+    </div>
 </div>

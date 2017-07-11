@@ -5,12 +5,14 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LEGAL DATA EXPERT</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/mq.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext">
     </environment>
     <environment names="Staging,Production">
@@ -18,56 +20,97 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/mq.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext">
     </environment>
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
-    <div class="container">
-
-        <div class="app-language-switcher">
-            <a href="@Url.Action("SetLanguage", "Home", new {culture= "ru-RU", returnUrl = Context.Request.Path })" class="app-selectedItem">@Localizer["Rus"]</a>
-            <a href="@Url.Action("SetLanguage", "Home", new {culture= "en-US", returnUrl = Context.Request.Path })">@Localizer["Eng"]</a>
-        </div>
-        <div class="app-logo"></div>
-        <nav class="navbar ">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">LDE.Web</a>*@
-                </div>
-                <div class="navbar-collapse collapse app-mainmenu">
-                    <ul class="nav navbar-nav">
-                        <li class="app-selectedItem"><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Main"]</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">@Localizer["Menu_About"]</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Contacts"]</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Price"]</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Request"]</a></li>
+    <!-- header -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="lang-menu">
+                        <li class="active"><a href="@Url.Action("SetLanguage", "Home", new {culture= "ru-RU", returnUrl = Context.Request.Path })" class="app-selectedItem">@Localizer["Rus"]</a></li>
+                        <li><a href="@Url.Action("SetLanguage", "Home", new {culture= "en-US", returnUrl = Context.Request.Path })">@Localizer["Eng"]</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="container body-content">
-            @RenderBody()
-
-            @*<hr />*@
-            <footer>
-                <div class="container">
-                    <div class="row-fluid">
-                        <div class="pull-right"><p>Legal Data Expert &copy; 2017</p></div>
-                        @*<div class="pull-left"><p>@Localizer["Footer_Registration"] Регистрация</p></div>*@
+                    <button class="collapse-btn hidden-lg hidden-md hidden-sm" data-target="#header-navbar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a href="#" class="logo"><img src="~/images/Logo.png" alt=""></a>
+                    <div class="head-navbar" id="header-navbar">
+                        <div class="head-navbar-in">
+                            <ul class="head-nav">
+                                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Main"]</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">@Localizer["Menu_About"]</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Contacts"]</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Price"]</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Menu_Request"]</a></li>
+                            </ul>
+                            <button class="nav-close" data-target="#header-navbar"></button>
+                        </div>
                     </div>
                 </div>
-                
-            </footer>
+            </div>
+        </div>
+    </header>
+    <!-- / header -->
+    <!-- main -->
+    <div class="main">
+        @RenderBody()
+    </div>
+    <!-- / main -->
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-in">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="f-menu">
+                            <li><a href="#">@Localizer["Footer_Registartion"]</a></li>
+                            <li><a href="#">@Localizer["Footer_TaxAndCorporatePlanning"]</a></li>
+                            <li><a href="#">@Localizer["Footer_Sales"]</a></li>
+                            <li><a href="#">@Localizer["Footer_AccountsInForeignBanks"]</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <div class="f-inner">
+                            <ul class="socially">
+                                <li><a href="#"><img src="~/images/s1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="~/images/s2.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="~/images/s3.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="~/images/s4.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="~/images/s5.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="~/images/s6.jpg" alt=""></a></li>
+                            </ul>
+                            <div class="copy">Copyright @Localizer["since"] 2017</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- / footer -->
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="@Localizer["Close"]"></button>
+                    <div class="modal-title">@Localizer["RequestModal_SubmitRequest"]</div>
+                    <form>
+                        <div class="form-group"><input type="text" placeholder="@Localizer["RequestModal_Name"]" class="form-control"></div>
+                        <div class="form-group"><input type="text" placeholder="@Localizer["RequestModal_Phone"]" class="form-control"></div>
+                        <button class="form-btn">@Localizer["RequestModal_Submit"]</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

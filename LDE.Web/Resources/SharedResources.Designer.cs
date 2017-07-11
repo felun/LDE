@@ -62,6 +62,51 @@ namespace LDE.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opening of accounts in foreign banks.
+        /// </summary>
+        internal static string Footer_AccountsInForeignBanks {
+            get {
+                return ResourceManager.GetString("Footer_AccountsInForeignBanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration and support of legal entities abroad.
+        /// </summary>
+        internal static string Footer_Registartion {
+            get {
+                return ResourceManager.GetString("Footer_Registartion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sale of ready-made foreign companies.
+        /// </summary>
+        internal static string Footer_Sales {
+            get {
+                return ResourceManager.GetString("Footer_Sales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tax and corporate planning.
+        /// </summary>
+        internal static string Footer_TaxAndCorporatePlanning {
+            get {
+                return ResourceManager.GetString("Footer_TaxAndCorporatePlanning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Learn more.
         /// </summary>
         internal static string Main_LearnMore {
@@ -112,6 +157,60 @@ namespace LDE.Web.Resources {
         internal static string Menu_Request {
             get {
                 return ResourceManager.GetString("Menu_Request", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More.
+        /// </summary>
+        internal static string More {
+            get {
+                return ResourceManager.GetString("More", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string RequestModal_Name {
+            get {
+                return ResourceManager.GetString("RequestModal_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        internal static string RequestModal_Phone {
+            get {
+                return ResourceManager.GetString("RequestModal_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        internal static string RequestModal_Submit {
+            get {
+                return ResourceManager.GetString("RequestModal_Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit your request.
+        /// </summary>
+        internal static string RequestModal_SubmitRequest {
+            get {
+                return ResourceManager.GetString("RequestModal_SubmitRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to since.
+        /// </summary>
+        internal static string Since {
+            get {
+                return ResourceManager.GetString("Since", resourceCulture);
             }
         }
     }

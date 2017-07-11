@@ -1,0 +1,145 @@
+@media (max-width: 991px) {
+	.head-nav li{
+		margin: 0 20px;
+	}
+	.header{
+		padding-bottom: 55px;
+	}
+	.serv-item{
+		padding-right: 0;
+	}
+	.footer-in{
+		padding: 20px;
+	}
+}
+
+@media (max-width: 767px) {
+	.header{
+		padding: 17px 0 30px 0;
+	}
+	.header .container,
+	.header .row{
+		position: static;
+	}
+	.logo{
+		width: 144px;
+		margin-bottom: 0;
+	}
+	.logo img{
+		max-width: 100%;
+	}
+	.lang-menu{
+		position: absolute;
+		right: 35px;
+		top: 5px;
+		width: 30px;
+		text-align: right;
+	}
+	.lang-menu li{
+		display: block;
+		margin: 0 0 2px 0;
+	}
+	.serv-item{
+		padding: 0;
+		margin-bottom: 40px;
+	}
+	.serv-item:after,
+	.serv-item:before{
+		display: none;
+	}
+	.serv-item .title,
+	h1{
+		font-size: 19px;
+		line-height: 23px;
+		margin-bottom: 20px;
+	}
+	.serv-menu{
+		padding-left: 0;
+		margin-bottom: 25px;
+	}
+	.serv-menu li{
+		line-height: 21px;
+	}
+	.about-wrap{
+		padding: 30px 15px;
+		margin-bottom: 25px;
+	}
+	.head-navbar{
+		position: fixed;
+		display: none;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		margin-right: 50px;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 100;
+		text-align: left;
+	}
+	.head-navbar.fade{
+		display: block;
+	}
+	.head-navbar.fade .head-navbar-in{
+		-webkit-transition: all .4s cubic-bezier(.5,0,0,1);
+        -o-transition: all .4s cubic-bezier(.5,0,0,1);
+        transition: all .4s cubic-bezier(.5,0,0,1);
+	} 
+	.head-navbar-in.fade.in{
+		opacity: 1;
+        visibility: visible;
+	}
+	.head-navbar.fade.in .head-navbar-in{
+		-webkit-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        -o-transform: translate(0,0);
+        transform: translate(0,0);
+	}
+	body{
+		overflow-x: hidden;
+		overflow-y: visible;
+	}
+	.head-navbar-in{
+		-webkit-transform: translate(-100%,0);
+	     -ms-transform: translate(-100%,0);
+	     -o-transform: translate(-100%,0);
+	     transform: translate(-100%,0);
+	}
+	.head-navbar-in{
+		background: #fff;
+		width: auto;
+		padding: 100px 30px 30px 30px;
+		text-align: left;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.nav-close{
+		opacity: 1;
+	}
+	.head-nav{
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+	}
+	.head-nav li{
+		display: block;
+		margin-bottom: 11px;		
+	}
+	.footer-in{
+		padding: 0 0 10px 0;
+		border-top: 0;
+	}
+	.f-inner{
+		display: block;
+		border-top: 1px solid #6B728C;
+		padding-top: 20px;
+	}
+	.socially{
+		margin-bottom: 5px;
+	}
+	.modal-dialog{
+		width: auto;
+	}
+	.modal-dialog .close{
+		right: -15px;
+	}
+}

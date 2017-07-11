@@ -18,6 +18,25 @@
     <None Remove="Properties\PublishProfiles\LegalDataExpert - FTP.pubxml" />
     <None Remove="Properties\PublishProfiles\LegalDataExpert - Web Deploy.pubxml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\css\mq.css" />
+    <Content Include="wwwroot\css\site.css" />
+    <Content Include="wwwroot\css\site.min.css" />
+    <Content Include="wwwroot\css\_site - Copy.css">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\css\_site.css" />
+    <Content Include="wwwroot\css\_site.min.css" />
+    <Content Include="wwwroot\images\icons.png" />
+    <Content Include="wwwroot\images\s1.jpg" />
+    <Content Include="wwwroot\images\s2.jpg" />
+    <Content Include="wwwroot\images\s3.jpg" />
+    <Content Include="wwwroot\images\s4.jpg" />
+    <Content Include="wwwroot\images\s5.jpg" />
+    <Content Include="wwwroot\images\s6.jpg" />
+    <Content Include="wwwroot\images\s7.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AspNetCore.Identity.MongoDB" Version="1.0.0-rc3" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.4.337" />

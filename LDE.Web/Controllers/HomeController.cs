@@ -31,9 +31,9 @@ namespace LDE.Web.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            var model = new MainPageViewModel(Request);
 
-            return View();
+            return View("About."+ model.Culture.TwoLetterISOLanguageName);
         }
 
         public IActionResult Contact()
